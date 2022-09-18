@@ -9,11 +9,11 @@ import {
 } from "@expo-google-fonts/inter";
 
 import { Background } from "./src/components/Background";
-import { Home } from './src/screens/Home'
+import { Home } from "./src/screens/Home";
 import { Loading } from "./src/components/Loading/index";
 
 export default function App() {
-  const [fontsLoaded] =  useFonts({
+  const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_600SemiBold,
     Inter_700Bold,
