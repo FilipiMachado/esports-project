@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "Meu Domínio"
+  origin: "Colocar Meu Domínio"
 }))
 
 const prisma = new PrismaClient({
@@ -32,7 +32,9 @@ app.get("/games", async (req, res) => {
 
 app.post("/games/:id/ads", async (req, res) => {
   const gameId = req.params.id;
-  const body: any = req.body;
+  const body = req.body;
+  console.log('my clg')
+  console.log(body)
 
   const ad = await prisma.ad.create({
     data: {
