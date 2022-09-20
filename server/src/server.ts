@@ -2,11 +2,12 @@ import express, { response } from "express";
 import { PrismaClient } from "@prisma/client";
 
 const app = express();
-const prisma = new PrismaClient();
 
-// HTTP Methods / API RESTful / HTTP Codes
+app.use(express.json());
 
-// GET, POST, PUT, PATCH, DELETE
+const prisma = new PrismaClient({
+  log: ["query"],
+});
 
 app.get("/games", async (req, res) => {
   const games = await prisma.game.findMany({
@@ -22,12 +23,28 @@ app.get("/games", async (req, res) => {
   return res.json([games]);
 });
 
-app.post("/ads", (req, res) => {
-  return res.status(201).json([]);
+app.post("/games/:id/ads", async (req, res) => {
+  const gameId = req.params.id;
+  const body = req.body;
+
+  const ad = await prisma.ad.create({
+    data: {
+      gameId,
+      name: body.name,
+      yearsPlaying: body.yearsPlaying,
+      discord: body.discord,
+      weekDays: body.weekDays.join(','),
+      hourStart: body.hourStart,
+      hourEnd: body.hourEnd,
+      useVoiceChannel: body.useVoiceChannel,
+    },
+  });
+
+  return res.status(201).json(body);
 });
 
 app.get("/games/:id/ads", async (req, res) => {
-  const gameId = req.params.id
+  const gameId = req.params.id;
 
   const ads = await prisma.ad.findMany({
     select: {
@@ -43,22 +60,38 @@ app.get("/games/:id/ads", async (req, res) => {
       gameId: gameId,
     },
     orderBy: {
-      createdAt: 'desc',
+      createdAt: "desc",
     },
-  })
+  });
 
-  return res.json(ads.map((ad) => {
-    return {
-      ...ad,
-      weekDays: ad.weekDays.split(',')
-    }
-  }));
+  return res.json(
+    ads.map((ad) => {
+      return {
+        ...ad,
+        weekDays: ad.weekDays.split(","),
+      };
+    })
+  );
 });
 
-app.get("/games/:id/discord", (req, res) => {
-  //const adId = req.params.id
+app.get("/ads/:id/discord", async (req, res) => {
+  const adId = req.params.id;
 
-  return res.json([]);
+  const ad = await prisma.ad.findUniqueOrThrow({
+    select: {
+      discord: true,
+    },
+    where: {
+      id: adId,
+    },
+  });
+
+  return res.json({
+    discord: ad.discord,
+  });
 });
 
 app.listen(3333);
+
+// HTTP Methods / API RESTful / HTTP Codes
+// GET, POST, PUT, PATCH, DELETE
