@@ -6,15 +6,24 @@ import logoImg from "./assets/esports-logo.svg";
 import GameBanner from "./components/GameBanner";
 import CreateAdBanner from "./components/CreateAdBanner";
 
+interface Game {
+  id: string;
+  title: string;
+  bannerURL: string;
+  _count: {
+    ads: number;
+  };
+}
+
 function App() {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3333/games")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setGames(data);
+        console.log(data[0]);
+        setGames(data[0]);
       });
   }, []);
 
@@ -31,16 +40,16 @@ function App() {
       </h1>
 
       <div className="grid grid-cols-6 gap-6 mt-16">
-        <GameBanner
-          bannerURL="./game-example.png"
-          title="League of Legends"
-          adsCount={4}
-        />
-        <GameBanner
-          bannerURL="./game-example.png"
-          title="League of Legends"
-          adsCount={4}
-        />
+        {games.map((game) => {
+          return (
+            <GameBanner
+              key={game.id}
+              bannerURL={game.bannerURL}
+              title={game.title}
+              adsCount={game._count.ads}
+            />
+          );
+        })}
       </div>
 
       <CreateAdBanner />
