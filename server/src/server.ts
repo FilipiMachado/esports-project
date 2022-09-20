@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "Colocar Meu Domínio"
+  origin: "http://localhost:3333"
 }))
 
 const prisma = new PrismaClient({
