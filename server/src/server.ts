@@ -1,48 +1,58 @@
 import express, { response } from "express";
+import { PrismaClient } from "@prisma/client";
 
 const app = express();
+const prisma = new PrismaClient();
 
 // HTTP Methods / API RESTful / HTTP Codes
 
 // GET, POST, PUT, PATCH, DELETE
 
-app.get("/games", (req, res) => {
-  return res.json([]);
+app.get("/games", async (req, res) => {
+  const games = await prisma.game.findMany({
+    include: {
+      _count: {
+        select: {
+          ads: true,
+        },
+      },
+    },
+  });
+
+  return res.json([games]);
 });
 
 app.post("/ads", (req, res) => {
   return res.status(201).json([]);
 });
 
-app.get("/games/:id/ads", (req, res) => {
-  //const gameId = req.params.id
+app.get("/games/:id/ads", async (req, res) => {
+  const gameId = req.params.id
 
-  return res.json([
-    {
-      id: 1,
-      name: "Anúncio 1",
+  const ads = await prisma.ad.findMany({
+    select: {
+      id: true,
+      name: true,
+      weekDays: true,
+      useVoiceChannel: true,
+      yearsPlaying: true,
+      hourStart: true,
+      hourEnd: true,
     },
-    {
-      id: 2,
-      name: "Anúncio 2",
+    where: {
+      gameId: gameId,
     },
-    {
-      id: 3,
-      name: "Anúncio 3",
+    orderBy: {
+      createdAt: 'desc',
     },
-    {
-      id: 4,
-      name: "Anúncio 4",
-    },
-    {
-      id: 5,
-      name: "Anúncio 5",
-    },
-    {
-      id: 6,
-      name: "Anúncio 6",
-    },
-  ]);
+  })
+
+  return res.json(ads.map((ad) => {
+    return {
+      ...ad,
+      weekDays: ad.weekDays.split(',')
+    }
+  }));
 });
 
 app.get("/games/:id/discord", (req, res) => {
