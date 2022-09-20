@@ -3,6 +3,7 @@ import { MagnifyingGlassPlus } from "phosphor-react";
 import "./styles/main.css";
 
 import logoImg from "./assets/esports-logo.svg";
+import GameBanner from "./components/GameBanner";
 
 function App() {
   return (
@@ -18,78 +19,8 @@ function App() {
       </h1>
 
       <div className="grid grid-cols-6 gap-6 mt-16">
-        <a href="" className="relative rounded-lg overflow-hidden">
-          <img src="/game-example.png" alt="" />
-
-          <div className="w-full pt-16 pb-4 bg-game-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block ml-2">
-              League of Legends
-            </strong>
-            <span className="text-zinc-300 text-sm block mt-1 ml-2">
-              4 anúncios
-            </span>
-          </div>
-        </a>
-        <a href="" className="relative rounded-lg overflow-hidden">
-          <img src="/game-example.png" alt="" />
-
-          <div className="w-full pt-16 pb-4 bg-game-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block ml-2">
-              League of Legends
-            </strong>
-            <span className="text-zinc-300 text-sm block mt-1 ml-2">
-              4 anúncios
-            </span>
-          </div>
-        </a>
-        <a href="" className="relative rounded-lg overflow-hidden">
-          <img src="/game-example.png" alt="" />
-
-          <div className="w-full pt-16 pb-4 bg-game-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block ml-2">
-              League of Legends
-            </strong>
-            <span className="text-zinc-300 text-sm block mt-1 ml-2">
-              4 anúncios
-            </span>
-          </div>
-        </a>
-        <a href="" className="relative rounded-lg overflow-hidden">
-          <img src="/game-example.png" alt="" />
-
-          <div className="w-full pt-16 pb-4 bg-game-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block ml-2">
-              League of Legends
-            </strong>
-            <span className="text-zinc-300 text-sm block mt-1 ml-2">
-              4 anúncios
-            </span>
-          </div>
-        </a>
-        <a href="" className="relative rounded-lg overflow-hidden">
-          <img src="/game-example.png" alt="" />
-
-          <div className="w-full pt-16 pb-4 bg-game-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block ml-2">
-              League of Legends
-            </strong>
-            <span className="text-zinc-300 text-sm block mt-1 ml-2">
-              4 anúncios
-            </span>
-          </div>
-        </a>
-        <a href="" className="relative rounded-lg overflow-hidden">
-          <img src="/game-example.png" alt="" />
-
-          <div className="w-full pt-16 pb-4 bg-game-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block ml-2">
-              League of Legends
-            </strong>
-            <span className="text-zinc-300 text-sm block mt-1 ml-2">
-              4 anúncios
-            </span>
-          </div>
-        </a>
+        <GameBanner />
+        <GameBanner />
       </div>
 
       <div className="pt-1 bg-nlw-gradient mt-8 self-stretch rounded-lg overflow-hidden">
