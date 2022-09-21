@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
@@ -15,6 +15,7 @@ interface Game {
 export function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([]);
   const [weekDays, setWeekDays] = useState<string[]>(["1"]);
+  const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
   console.log(weekDays);
 
@@ -27,6 +28,15 @@ export function CreateAdModal() {
       });
   }, []);
 
+  function handleCreateAd(e: FormEvent) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+
+    console.log(data);
+  }
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
@@ -36,12 +46,13 @@ export function CreateAdModal() {
           Publique um anúncio
         </Dialog.Title>
 
-        <form className="mt-8 flex flex-col gap-4">
+        <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <label className="font-semibold" htmlFor="game">
               Qual o game?
             </label>
             <select
+              name="game"
               id="game"
               className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none"
               defaultValue=""
@@ -61,6 +72,7 @@ export function CreateAdModal() {
           <div className="flex flex-col gap-2">
             <label htmlFor="name">Seu nome (ou nickname)</label>
             <DefaultInput
+              name="name"
               id="name"
               type="text"
               placeholder="Como te chamam dentro do game?"
@@ -71,6 +83,7 @@ export function CreateAdModal() {
             <div className="flex flex-col gap-2">
               <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
               <DefaultInput
+                name="yearsPlaying"
                 id="yearsPlaying"
                 type="number"
                 placeholder="Tudo bem ser ZERO"
@@ -78,7 +91,12 @@ export function CreateAdModal() {
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="discord">Qual seu Discord?</label>
-              <DefaultInput id="discord" type="text" placeholder="User#0000" />
+              <DefaultInput
+                name="discord"
+                id="discord"
+                type="text"
+                placeholder="User#0000"
+              />
             </div>
           </div>
 
@@ -160,14 +178,34 @@ export function CreateAdModal() {
             <div className="flex flex-col gap-2 flex-1">
               <label htmlFor="hourStart">Qual horário do dia?</label>
               <div className="grid grid-cols-2 gap-2">
-                <DefaultInput id="hourStart" type="time" placeholder="De" />
-                <DefaultInput id="hourEnd" type="time" placeholder="Até" />
+                <DefaultInput
+                  name="hourStart"
+                  id="hourStart"
+                  type="time"
+                  placeholder="De"
+                />
+                <DefaultInput
+                  name="hourEnd"
+                  id="hourEnd"
+                  type="time"
+                  placeholder="Até"
+                />
               </div>
             </div>
           </div>
 
           <label className="mt-2 flex items-center gap-2 text-sm">
-            <Checkbox.Root className="w-6 h-6 p-1 rounded bg-zinc-900  ">
+            <Checkbox.Root
+              checked={useVoiceChannel}
+              onCheckedChange={(checked) => {
+                if (checked === true) {
+                  setUseVoiceChannel(true);
+                } else {
+                  setUseVoiceChannel(false);
+                }
+              }}
+              className="w-6 h-6 p-1 rounded bg-zinc-900"
+            >
               <Checkbox.Indicator>
                 <Check className="w-4 h-4 text-emerald-400" />
               </Checkbox.Indicator>
