@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TouchableOpacity, View, Image, FlatList } from "react-native";
+import { TouchableOpacity, View, Image, FlatList, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Entypo } from "@expo/vector-icons";
@@ -67,8 +67,16 @@ export function Game() {
           )}
           style={styles.containerList}
           horizontal
-          contentContainerStyle={styles.contentList}
+          contentContainerStyle={[
+            styles.contentList,
+            duos.length === 0 && styles.emptyListContent,
+          ]}
           showsHorizontalScrollIndicator={false}
+          ListEmptyComponent={() => (
+            <Text style={styles.emptyListText}>
+              Não há anúncios publicados para este jogo ainda.
+            </Text>
+          )}
         />
       </SafeAreaView>
     </Background>
