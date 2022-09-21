@@ -1,22 +1,22 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { View, Image, FlatList } from "react-native";
 
 import { Header } from "../../components/Header";
-import { GameCard } from "../../components/GameCard";
+import { GameCard, GameCardProps } from "../../components/GameCard";
 
 import logoImg from "../../assets/logo-nlw-esports.png";
-
-import { GAMES } from "../../utils/games";
 
 import { styles } from "./styles";
 
 export function Home() {
+  const [games, setGames] = useState<GameCardProps[]>([]);
+
   useEffect(() => {
     fetch("http://192.168.0.102:3333/games")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        setGames(data[0]);
       });
   }, []);
 
@@ -28,7 +28,7 @@ export function Home() {
         subtitle={"Selecione o game que deseja jogar..."}
       />
       <FlatList
-        data={GAMES}
+        data={games}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <GameCard data={item} />}
         showsHorizontalScrollIndicator={false}
