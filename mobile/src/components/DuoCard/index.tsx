@@ -41,7 +41,7 @@ export function DuoCard({ data }: Props) {
       <TouchableOpacity style={styles.button}>
         <GameController color={THEME.COLORS.TEXT} size={20} />
 
-        <Text></Text>
+        <Text style={styles.buttonTitle}>Conectar</Text>
       </TouchableOpacity>
     </View>
   );
