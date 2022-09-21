@@ -29,6 +29,14 @@ export const styles = StyleSheet.create({
     height: 160,
     borderRadius: 8,
     marginTop: 32,
-    alignSelf: 'center',
+    alignSelf: "center",
+  },
+  containerList: {
+    width: "100%",
+  },
+  contentList: {
+    paddingLeft: 32,
+    paddingRight: 64,
+    alignItems: "flex-start",
   },
 });

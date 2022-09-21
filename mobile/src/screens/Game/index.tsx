@@ -62,7 +62,13 @@ export function Game() {
         <FlatList
           data={duos}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <DuoCard data={item} />}
+          renderItem={({ item }) => (
+            <DuoCard data={item} onConnect={() => {}} />
+          )}
+          style={styles.containerList}
+          horizontal
+          contentContainerStyle={styles.contentList}
+          showsHorizontalScrollIndicator={false}
         />
       </SafeAreaView>
     </Background>
