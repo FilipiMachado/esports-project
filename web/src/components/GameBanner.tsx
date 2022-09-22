@@ -13,7 +13,7 @@ function GameBanner(props: GameBannerProps) {
           {props.title}
         </strong>
         <span className="text-zinc-300 text-sm block mt-1 ml-2">
-          {props.adsCount} anúncio(s)
+          {props.adsCount} ad(s)
         </span>
       </div>
     </a>

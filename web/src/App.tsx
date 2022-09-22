@@ -34,11 +34,11 @@ function App() {
       <img src={logoImg} alt="main-logo" />
 
       <h1 className="text-5xl text-white font-black mt-20">
-        Seu{" "}
+        Your{" "}
         <span className="bg-nlw-gradient bg-clip-text text-transparent">
           duo
         </span>{" "}
-        está aqui.
+        is here.
       </h1>
 
       <div className="grid grid-cols-6 gap-6 mt-16">

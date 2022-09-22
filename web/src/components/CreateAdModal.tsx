@@ -48,10 +48,10 @@ export function CreateAdModal() {
         useVoiceChannel: useVoiceChannel,
       });
 
-      alert("Anúncio criado com sucesso!");
+      alert("Ad created successfully!");
     } catch (err) {
       console.log(err);
-      alert("Erro ao criar o anúncio");
+      alert("Error when creating ad.");
     }
   }
 
@@ -61,13 +61,13 @@ export function CreateAdModal() {
 
       <Dialog.Content className="fixed bg-[#2A2834] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
         <Dialog.Title className="text-3xl font-black">
-          Publique um anúncio
+          Publish a new ad
         </Dialog.Title>
 
         <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <label className="font-semibold" htmlFor="game">
-              Qual o game?
+              Which game?
             </label>
             <select
               name="game"
@@ -75,7 +75,7 @@ export function CreateAdModal() {
               className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none"
               defaultValue=""
             >
-              <option disabled>Selecione o game que deseja jogar</option>
+              <option disabled>Select the game you want to play</option>
 
               {games.map((game) => {
                 return (
@@ -88,27 +88,29 @@ export function CreateAdModal() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="name">Seu nome (ou nickname)</label>
+            <label htmlFor="name">Your name (or nickname)</label>
             <DefaultInput
               name="name"
               id="name"
               type="text"
-              placeholder="Como te chamam dentro do game?"
+              placeholder="How they call you inside the game?"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
+              <label htmlFor="yearsPlaying">
+                How long you play? <span title="Years">(y)</span>
+              </label>
               <DefaultInput
                 name="yearsPlaying"
                 id="yearsPlaying"
                 type="number"
-                placeholder="Tudo bem ser ZERO"
+                placeholder="It's okay to be ZERO"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="discord">Qual seu Discord?</label>
+              <label htmlFor="discord">What is your Discord?</label>
               <DefaultInput
                 name="discord"
                 id="discord"
@@ -120,7 +122,7 @@ export function CreateAdModal() {
 
           <div className="flex gap-6">
             <div className="flex flex-col gap-2">
-              <label htmlFor="weekDays">Quando costuma jogar?</label>
+              <label htmlFor="weekDays">When you usually play?</label>
 
               <ToggleGroup.Root
                 type="multiple"
@@ -129,25 +131,25 @@ export function CreateAdModal() {
                 onValueChange={setWeekDays}
               >
                 <ToggleGroup.Item
-                  title="Domingo"
+                  title="Sunday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("0") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
                   value="0"
                 >
-                  D
+                  S
                 </ToggleGroup.Item>
                 <ToggleGroup.Item
-                  title="Segunda"
+                  title="Monday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("1") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
                   value="1"
                 >
-                  S
+                  M
                 </ToggleGroup.Item>
                 <ToggleGroup.Item
-                  title="Terça"
+                  title="Tuesday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("2") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
@@ -156,34 +158,34 @@ export function CreateAdModal() {
                   T
                 </ToggleGroup.Item>
                 <ToggleGroup.Item
-                  title="Quarta"
+                  title="Wednesday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("3") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
                   value="3"
                 >
-                  Q
+                  W
                 </ToggleGroup.Item>
                 <ToggleGroup.Item
-                  title="Quinta"
+                  title="Thursday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("4") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
                   value="4"
                 >
-                  Q
+                  T
                 </ToggleGroup.Item>
                 <ToggleGroup.Item
-                  title="Sexta"
+                  title="Friday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("5") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
                   value="5"
                 >
-                  S
+                  F
                 </ToggleGroup.Item>
                 <ToggleGroup.Item
-                  title="Sábado"
+                  title="Saturday"
                   className={`w-8 h-8 rounded ${
                     weekDays.includes("6") ? "bg-violet-500" : "bg-zinc-900"
                   }`}
@@ -194,19 +196,19 @@ export function CreateAdModal() {
               </ToggleGroup.Root>
             </div>
             <div className="flex flex-col gap-2 flex-1">
-              <label htmlFor="hourStart">Qual horário do dia?</label>
+              <label htmlFor="hourStart">Which time of the day?</label>
               <div className="grid grid-cols-2 gap-2">
                 <DefaultInput
                   name="hourStart"
                   id="hourStart"
                   type="time"
-                  placeholder="De"
+                  placeholder="From"
                 />
                 <DefaultInput
                   name="hourEnd"
                   id="hourEnd"
                   type="time"
-                  placeholder="Até"
+                  placeholder="To"
                 />
               </div>
             </div>
@@ -228,7 +230,7 @@ export function CreateAdModal() {
                 <Check className="w-4 h-4 text-emerald-400" />
               </Checkbox.Indicator>
             </Checkbox.Root>
-            Costumo me conectar ao chat de voz
+            I usually connect to Discord Voice Chat.
           </label>
 
           <footer className="mt-4 flex justify-end gap-4">
@@ -236,14 +238,14 @@ export function CreateAdModal() {
               type="button"
               className="bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600"
             >
-              Cancelar
+              Cancel
             </Dialog.Close>
             <button
               type="submit"
               className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
             >
               <GameController size={24} />
-              Encontrar duo
+              Find your duo
             </button>
           </footer>
         </form>

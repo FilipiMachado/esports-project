@@ -7,16 +7,16 @@ function CreateAdBanner() {
       <div className="bg-[#2A2634] px-8 py-6 flex justify-between items-center">
         <div>
           <strong className="text-2xl text-white font-black block">
-            Não encontrou seu duo?
+            Did not find your duo?
           </strong>
           <span className="text-zinc-400 block">
-            Publique um anúncio para encontrar novos players!
+            Publish a ad to find new players!
           </span>
         </div>
 
         <Dialog.Trigger className="py-3 px-4 bg-violet-500 hover:bg-violet-600 text-white rounded flex items-center gap-3">
           <MagnifyingGlassPlus size={24} />
-          Publicar anúncio
+          Publish New Ad
         </Dialog.Trigger>
       </div>
     </div>
