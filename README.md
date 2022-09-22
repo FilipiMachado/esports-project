@@ -1,6 +1,6 @@
-<h2>Popular Movies SPA</h2>
+<h2>NLW eSports 2022</h2>
 
-Test: https://amazing-movies-vuejs.netlify.app/
+Test: "gerar link depois"
 
 <p align="center">
   <a href="https://imgur.com/ENAsm3s"><img src="https://i.imgur.com/ENAsm3s.png" title="source: imgur.com" /></a>
@@ -27,8 +27,13 @@ Test: https://amazing-movies-vuejs.netlify.app/
 
 This project was developed using this technologies:
 
-- [Vue.JS](https://vuejs.org/)
-- [Netlify](https://www.netlify.com/)
+- [React.JS](https://reactjs.org/)
+- [React.Native](https://reactnative.dev/)
+- [Node.JS](https://nodejs.org/en/)
+- [Vite](https://vitejs.dev/)
+- [Expo](https://expo.dev/)
+- [Prisma](https://www.prisma.io/)
+- [Radix-UI](https://www.radix-ui.com/)
 
 ## 🚀 How to Execute
 
@@ -49,11 +54,10 @@ $ npm run serve
 ```
 The app will be available in this address http://localhost:3000.
 
-Remember, you need a account at [Netlify](https://www.netlify.com/) to host this app.
-
 ## 💻 Project
 
-The Popular Movies SPA was developed using front-end knowledge and requests via API.                                                                                                            
+The project have a purpose of "Find your Duo". You will be able to find the perfect partner to play your favorite game together, by adding it's account on Discord.
+
 ## 📝 License
 
 This project is under MIT license. Read this file [LICENSE](LICENSE.md) for more details.
