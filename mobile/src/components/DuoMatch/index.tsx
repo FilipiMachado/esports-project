@@ -51,12 +51,12 @@ export function DuoMatch({ discord, onClose, ...rest }: Props) {
           <CheckCircle size={64} color={THEME.COLORS.SUCCESS} weight="bold" />
 
           <Header
-            title="Bora jogar!"
-            subtitle="Agora é só começar a jogar!"
+            title="Let's play!"
+            subtitle="Now it's time to play!"
             style={{ alignItems: "center", marginTop: 24 }}
           />
 
-          <Text style={styles.label}>Adicione no Discord</Text>
+          <Text style={styles.label}>Add to Discord</Text>
 
           <TouchableOpacity
             style={styles.discordButton}

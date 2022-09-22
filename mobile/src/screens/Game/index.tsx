@@ -67,7 +67,7 @@ export function Game() {
           resizeMode="cover"
         />
 
-        <Header title={game.title} subtitle="Conecte-se e comece a jogar!" />
+        <Header title={game.title} subtitle="Connect and start to play!" />
 
         <FlatList
           data={duos}
@@ -84,7 +84,7 @@ export function Game() {
           showsHorizontalScrollIndicator={false}
           ListEmptyComponent={() => (
             <Text style={styles.emptyListText}>
-              Não há anúncios publicados para este jogo ainda.
+              There is no ads published yet.
             </Text>
           )}
         />
