@@ -2,7 +2,9 @@
   <a href="https://imgur.com/JZ8mYYm"><img src="https://imgur.com/JZ8mYYm.png" title="source: imgur.com" /></a>
 </p>
 
-Test: "gerar link depois"
+## 💻 Project
+
+The project have a purpose of "Find your Duo". You will be able to find the perfect partner to play your favorite game together, by adding it's account on Discord.
 
 <p align="center">
   <a href="https://imgur.com/ENAsm3s"><img src="https://i.imgur.com/ENAsm3s.png" title="source: imgur.com" /></a>
@@ -63,10 +65,6 @@ To start the SERVER project, follow this steps:
 $ npm install
 $ npm run db:migrate
 ```
-
-## 💻 Project
-
-The project have a purpose of "Find your Duo". You will be able to find the perfect partner to play your favorite game together, by adding it's account on Discord.
 
 ## 📝 License
 
