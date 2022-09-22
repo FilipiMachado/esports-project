@@ -42,19 +42,19 @@ This project was developed using this technologies:
 Clone the project and access the folder.
 
 ```bash
-$ git clone https://github.com/FilipiMachado/amazing-movies-vuejs
-$ cd amazing-movies-vuejs
+$ git clone https://github.com/FilipiMachado/esports-project
+$ cd esports-project
 ```
 
-To start, follow this steps:
+To start the web project, follow this steps:
 ```bash
 # Install the dependencies
 $ npm install
 
 # Start the project
-$ npm run serve
+$ npm run dev
 ```
-The app will be available in this address http://localhost:3000.
+The app will be available in this address http://127.0.0.1:5173/
 
 ## 💻 Project
 
