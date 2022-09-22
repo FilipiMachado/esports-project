@@ -64,6 +64,9 @@ To start the SERVER project, follow this steps:
 # Then, to create the local database, run:
 $ npm install
 $ npm run db:migrate
+
+# Start the project
+$ npm run dev
 ```
 
 ## 📝 License
