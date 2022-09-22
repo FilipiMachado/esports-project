@@ -64,7 +64,11 @@ export function DuoMatch({ discord, onClose, ...rest }: Props) {
             disabled={isCopying}
           >
             <Text style={styles.discord}>
-              {isCopying ? <ActivityIndicator /> : discord}
+              {isCopying ? (
+                <ActivityIndicator color={THEME.COLORS.PRIMARY} />
+              ) : (
+                discord
+              )}
             </Text>
           </TouchableOpacity>
         </View>
