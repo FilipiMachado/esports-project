@@ -8,6 +8,7 @@ import logoImg from "../../assets/logo-nlw-esports.png";
 import { Background } from "../../components/Background";
 import { Header } from "../../components/Header";
 import { DuoCard, DuoCardProps } from "../../components/DuoCard";
+import { DuoMatch } from "../../components/DuoMatch";
 
 import { GameParams } from "../../@types/navigation";
 
@@ -20,6 +21,7 @@ export function Game() {
   const game = route.params as GameParams;
 
   const [duos, setDuos] = useState<DuoCardProps[]>([]);
+  const [discordDuoSelected, setDiscordDuoSelected] = useState("asdasd");
 
   function handleGoBack() {
     navigation.goBack();
@@ -77,6 +79,12 @@ export function Game() {
               Não há anúncios publicados para este jogo ainda.
             </Text>
           )}
+        />
+
+        <DuoMatch
+          onClose={() => setDiscordDuoSelected("")}
+          discord="user-test"
+          visible={discordDuoSelected.length > 0}
         />
       </SafeAreaView>
     </Background>
