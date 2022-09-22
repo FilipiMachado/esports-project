@@ -64,7 +64,7 @@ To start the MOBILE project, follow this steps:
 $ npm install
 
 # Start the project
-$ npm run dev
+$ npm start
 ```
 
 ## <br>
