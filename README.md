@@ -56,7 +56,7 @@ $ npm run dev
 ```
 The app will be available in this address http://127.0.0.1:5173/
 
-</hr>
+<br>
 
 To start the MOBILE project, follow this steps:
 ```bash
@@ -67,7 +67,7 @@ $ npm install
 $ npm run dev
 ```
 
-</hr>
+<br>
 
 To start the SERVER project, follow this steps:
 
@@ -87,7 +87,7 @@ The project have a purpose of "Find your Duo". You will be able to find the perf
 
 This project is under MIT license. Read this file [LICENSE](LICENSE.md) for more details.
 
-</hr>
+<br>
 
 <h2>Popular Movies SPA</h2>
 
