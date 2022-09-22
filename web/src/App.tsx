@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import GameBanner from "./components/GameBanner";
@@ -22,12 +23,10 @@ function App() {
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/games")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data[0]);
-        setGames(data[0]);
-      });
+    axios("http://localhost:3333/games").then((response) => {
+      console.log(response.data[0]);
+      setGames(response.data[0]);
+    });
   }, []);
 
   return (
