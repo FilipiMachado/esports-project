@@ -34,9 +34,11 @@ export function DuoMatch({ discord, onClose, ...rest }: Props) {
             style={{ alignItems: "center", marginTop: 24 }}
           />
 
-          <Text style={styles.label}> Adicione no Discord</Text>
+          <Text style={styles.label}>Adicione no Discord</Text>
 
-          <Text style={styles.discord}>{discord}</Text>
+          <TouchableOpacity style={styles.discordButton}>
+            <Text style={styles.discord}>{discord}</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </Modal>
