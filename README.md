@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://imgur.com/JZ8mYYm"><img src="https://imgur.com/JZ8mYYm.png" title="source: imgur.com" /></a>
+</p>
+
 <h2>NLW eSports 2022</h2>
 
 Test: "gerar link depois"
