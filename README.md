@@ -7,7 +7,22 @@
 The project have a purpose of "Find your Duo". You will be able to find the perfect partner to play your favorite game together, by adding it's account on Discord.
 
 <p align="center">
-  <a href="https://imgur.com/ENAsm3s"><img src="https://i.imgur.com/ENAsm3s.png" title="source: imgur.com" /></a>
+  <a href="https://imgur.com/2vfvOAV"><img src="https://imgur.com/2vfvOAV.png" title="source: imgur.com" /></a>
+</p>
+<p align="center">
+  <a href="https://imgur.com/YZ5UGKb"><img src="https://imgur.com/YZ5UGKb.png" title="source: imgur.com" /></a>
+</p>
+<p align="center">
+  <a href="https://imgur.com/dbsoNlz"><img src="https://imgur.com/dbsoNlz.png" title="source: imgur.com" /></a>
+</p>
+<p align="center">
+  <a href="https://imgur.com/jLMO94p"><img src="https://imgur.com/jLMO94p.png" title="source: imgur.com" /></a>
+</p>
+<p align="center">
+  <a href="https://imgur.com/CeQen6V"><img src="https://imgur.com/CeQen6V.png" title="source: imgur.com" /></a>
+</p>
+<p align="center">
+  <a href="https://imgur.com/8Y4q5WL"><img src="https://imgur.com/8Y4q5WL.png" title="source: imgur.com" /></a>
 </p>
 
 <br>
