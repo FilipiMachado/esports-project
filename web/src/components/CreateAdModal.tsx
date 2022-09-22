@@ -18,11 +18,8 @@ export function CreateAdModal() {
   const [weekDays, setWeekDays] = useState<string[]>(["1"]);
   const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
-  console.log(weekDays);
-
   useEffect(() => {
     axios("http://localhost:3333/games").then((response) => {
-      console.log(response.data[0]);
       setGames(response.data[0]);
     });
   }, []);
