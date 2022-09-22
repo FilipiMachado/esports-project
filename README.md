@@ -46,7 +46,7 @@ $ git clone https://github.com/FilipiMachado/esports-project
 $ cd esports-project
 ```
 
-To start the web project, follow this steps:
+To start the WEB project, follow this steps:
 ```bash
 # Install the dependencies
 $ npm install
@@ -55,6 +55,27 @@ $ npm install
 $ npm run dev
 ```
 The app will be available in this address http://127.0.0.1:5173/
+
+To start the MOBILE project, follow this steps:
+```bash
+# Install the dependencies
+$ npm install
+
+# Start the project
+$ npm run dev
+```
+
+To start the SERVER project, follow this steps:
+
+- 
+
+```bash
+# First, create a new .env file on the root directory, using the .env.example template as base.
+
+# Then, to create the local database, run:
+$ npm install
+$ npm run db:migrate
+```
 
 ## 💻 Project
 
