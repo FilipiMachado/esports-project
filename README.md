@@ -19,9 +19,6 @@ The project have a purpose of "Find your Duo". You will be able to find the perf
   <a href="https://imgur.com/jLMO94p"><img src="https://imgur.com/jLMO94p.png" title="source: imgur.com" /></a>
 </p>
 <p align="center">
-  <a href="https://imgur.com/CeQen6V"><img src="https://imgur.com/CeQen6V.png" title="source: imgur.com" /></a>
-</p>
-<p align="center">
   <a href="https://imgur.com/8Y4q5WL"><img src="https://imgur.com/8Y4q5WL.png" title="source: imgur.com" /></a>
 </p>
 
