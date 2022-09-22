@@ -56,6 +56,8 @@ $ npm run dev
 ```
 The app will be available in this address http://127.0.0.1:5173/
 
+</hr>
+
 To start the MOBILE project, follow this steps:
 ```bash
 # Install the dependencies
@@ -65,9 +67,9 @@ $ npm install
 $ npm run dev
 ```
 
-To start the SERVER project, follow this steps:
+</hr>
 
-- 
+To start the SERVER project, follow this steps:
 
 ```bash
 # First, create a new .env file on the root directory, using the .env.example template as base.
