@@ -1,4 +1,4 @@
-h2>Popular Movies SPA</h2>
+<h2>Popular Movies SPA</h2>
 
 Test: https://amazing-movies-vuejs.netlify.app/
 
