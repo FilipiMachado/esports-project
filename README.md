@@ -35,6 +35,7 @@ This project was developed using this technologies:
 - [Expo](https://expo.dev/)
 - [Prisma](https://www.prisma.io/)
 - [Radix-UI](https://www.radix-ui.com/)
+- [Tailwind](https://tailwindcss.com/)
 
 ## 🚀 How to Execute
 
